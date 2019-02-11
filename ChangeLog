@@ -1,0 +1,146 @@
+2007-10-17 11:08  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* ChangeLog, ChangeLog.old, pikloops.spec: New release
+
+2007-10-17 09:40  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* Makefile.am: Update
+
+2007-10-17 09:35  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* aclocal.m4, config.h.in, configure.files, stamp-h.in, subdirs:
+	  Remove files that don't have to be in repository.
+
+2007-10-17 09:15  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* pikloops.kdevelop: Update
+
+2007-10-17 09:15  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* pikloops.kdevelop.pcs: Remove files that don't have to be in
+	  repository.
+
+2007-10-17 09:13  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* Makefile.in, acinclude.m4, configure.in, doc/Makefile.in,
+	  doc/en/Makefile.in, doc/fr/Makefile.in, pikloops.kdevses,
+	  po/Makefile.in, src/Makefile.in: Remove files that don't have to
+	  be in repository.
+
+2007-10-17 09:04  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* configure: No configure in svn
+
+2007-10-17 09:01  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* configure.in.in: New release
+
+2007-10-17 09:00  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: Fix compile time error
+
+2007-10-16 08:34  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* NEWS: Update
+
+2007-10-15 21:46  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* po/es.po: Add trailing point, fix copyright.
+
+2007-10-15 21:36  Carlos M. Cámara <cmcamara+PIKLOOPS AT gmail DOT com>
+
+	* po/es.po: Spanish translation up to date
+
+2007-10-15 17:24  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* po/de.po, po/es.po, po/fr.po, po/pikloops.pot: Update strings.
+
+2007-10-15 17:24  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp, src/pikdelay.cpp, src/pikdelay.h: - Fix bug
+	  in calculation
+	  - Remove CounterD
+	  - New delay management
+	  - Update copyright
+
+2007-10-15 08:16  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/pikloops.desktop: Remove Education category, add Engineering
+	  category.
+
+2007-10-11 15:29  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* po/de.po, po/es.po, po/fr.po, po/pikloops.pot: Update strings
+
+2007-10-11 15:07  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: Harmonious code
+
+2007-10-11 15:06  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: Don't localize PIC instructions
+
+2007-10-11 14:57  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: Simplify string
+
+2007-10-11 14:56  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: Remove useless white space in assembler
+	  code line
+
+2007-10-11 14:53  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: More cleanup
+
+2007-10-11 14:39  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: Default frequency is 4MHz
+
+2007-10-11 14:37  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: Some cleanup
+
+2007-10-11 14:30  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/pikdelay.cpp: Remove useless function call
+
+2007-10-09 17:50  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* po/de.po, po/es.po, po/fr.po, po/pikloops.pot: Typo in generated
+	  code
+
+2007-10-09 17:37  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp: Typo in generated code
+
+2007-10-09 17:31  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/pikdelay.cpp: Fix compile time error
+
+2007-10-09 17:22  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/mainwidgetpl.cpp, src/pikdelay.cpp, src/pikdelay.h:
+	  Mispelling
+
+2007-10-09 17:15  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/pikdelay.cpp: Fix a gpasm warning
+
+2007-10-09 17:12  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* src/pikdelay.cpp: Nicer look
+
+2007-10-08 13:24  Alain Portal <dionysos-sf AT users DOT sourceforge DOT net>
+
+	* admin/ChangeLog, admin/Doxyfile.am, admin/acinclude.m4.in,
+	  admin/am_edit, admin/config.guess, admin/config.sub,
+	  admin/configure.in.bot.end, admin/cvs.sh,
+	  admin/detect-autoconf.pl, admin/doxygen.sh, admin/install-sh,
+	  admin/libtool.m4.in, admin/ltmain.sh, admin/missing: Update tools
+	  for kdevelop svn
+
+2007-09-29 16:34  Carlos M. Cámara <cmcamara+PIKLOOPS AT gmail DOT com>
+
+	* po/es.po: Changed the date format in one string, just to test the
+	  svn commit

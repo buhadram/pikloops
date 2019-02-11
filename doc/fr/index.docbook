@@ -1,0 +1,172 @@
+<?xml version="1.0" ?>
+<!-- kate: tab-width 2; indent-mode xml; -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+		  <!ENTITY pikloops "<application>PikLoops</application>">
+		  <!ENTITY kappname "&pikloops;">
+		  <!ENTITY pikloops-http '<ulink url="http://pikloops.sourceforge.net">http://pikloops.sourceforge.net</ulink>'>
+		  <!ENTITY % French "INCLUDE">
+]>
+		  
+<book lang="&language;">
+	<bookinfo>
+		<title>Le manuel de PikLoops</title>
+		<authorgroup>
+			<author>
+				<firstname>Alain</firstname>
+				<surname>Portal</surname>
+				<affiliation>
+					<address>
+						<email>aportal@univ-montp2.fr</email>
+					</address>
+				</affiliation>
+			</author>
+		</authorgroup>
+		<copyright>
+			<year>2007</year>
+			<holder>Alain Portal</holder>
+		</copyright>
+		<legalnotice>&FDLNotice;</legalnotice>
+		<date>2007-09-29</date>
+		<releaseinfo>0.2.4</releaseinfo>
+		<abstract>
+			<para>PikLoops est un générateur de code de temporisation pour PIC</para> 
+		</abstract>
+		<keywordset>
+			<keyword>PikLoops</keyword>
+			<keyword>KDE</keyword>
+			<keyword>Development</keyword>
+			<keyword>Electronics</keyword>
+			<keyword>PICs</keyword>
+			<keyword>delay</keyword>
+		</keywordset>
+	</bookinfo>
+
+	<chapter id="introduction">
+		<title>Introduction</title>
+		<para>&kappname; est un logiciel intuitif qui facilite le travail de l'électronicien
+			lors de la conception de temporisation pour les microcontrôleurs PIC de Microchip.
+			Son utilisation est très simple.
+		</para>
+		<para>Aussi, avez-vous vraiment besoin d'une documentation utiliser &kappname;&nbsp;?
+			Je ne le pense pas.
+		</para>
+	</chapter>
+
+	<chapter id="using-pikloop">
+		<title>Utiliser &kappname;</title>
+		<para>Dans la liste des valeurs de fréquence, choisissez celle qu'utilise le PIC
+			pour lequel vous souhaitez concevoir la temporisation. Si la fréquence que vous
+			utilisez ne s'y trouve pas, vous pouvez saisir directement une valeur
+			personnalisée, en MHz. Cette valeur sera ajoutée à la fin de la liste et y
+			restera tant que l'application n'est pas fermée.
+		</para>
+		<para>
+			Ensuite, entrez la durée de la temporisation dans la zone de saisie prévue
+			à cet effet et validez la saisie en appuyant sur la touche «&nbsp;Entrée&nbsp;»
+			ou en cliquant sur le bouton «&nbsp;Calculatrice&nbsp;».
+		</para>
+		<para>
+			&kappname; vous a alors écrit le code de la temporisation. Pour le récupérer,
+			il vous suffit de le copier soit avec le raccourci clavier
+			<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>,
+			soit avec le bouton de la barre de tâche et de le coller dans votre éditeur.
+			Vous pouvez également effectuez un glissé/copié de la fenêtre qui contient
+			le code vers votre éditeur.
+		</para>
+		<para>
+			Voilà&nbsp;! C'est tout&nbsp;!
+		</para>
+		<para>
+			Et si vous pensez que cette documentation est insuffisante, dites-le moi,
+			et surtout, comment l'améliorer&nbsp;;-)
+		</para>
+	</chapter>
+
+	<chapter id="bugs">
+		<title>Bogues connus</title>
+		<para>
+			Aucun bien sûr&nbsp;!
+		</para>
+	</chapter>
+
+	<chapter id="future">
+		<title>Et dans le futur&nbsp;?</title>
+		<para>
+			Qu'allons nous faire&nbsp;?
+		</para>
+		<para>
+			Une interface en ligne de commande, ce serait bien, non&nbsp;?
+		</para>
+	</chapter>
+
+	<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+		<title>Remerciements et licences</title>
+
+		<para>
+			&kappname;
+		</para>
+		<para>
+			Programme copyright &copy; 2004 Javier Fernando Vargas Gonzales <email>fernandovargas@cable.net.co</email>
+		</para>
+		<para>
+			Programme copyright &copy; 2004 Alain Gibaud <email>alain.gibaud@free.fr</email>
+		</para>
+		<para>
+			Programme copyright &copy; 2007 Alain Portal <email>aportal@univ-montp2.fr</email>
+		</para>
+
+		<para>
+			Documentation Copyright &copy; 2007 Alain Portal
+		</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;               <!-- FDL: do not remove -->
+
+<!-- Determine which license your application is licensed under,
+     and delete all the remaining licenses below:
+
+     (NOTE:  All documentation are licensed under the FDL,
+     regardless of what license the application uses) -->
+
+&underGPL;        	 <!-- GPL License -->
+
+	</chapter>
+
+	<appendix id="installation">
+		<title>Installation</title>
+
+
+		<sect1 id="getting-kapp">
+			<title>Comment obtenir &kappname;</title>
+
+<!-- This first entity contains boiler plate for applications that are
+part of KDE CVS.  You should remove it if you are releasing your
+application -->
+
+			<para>
+				Vous pouvez télécharger &kappname; ici &pikloops-http;
+			</para>
+		</sect1>
+
+		<sect1 id="compilation">
+			<title>Compilation et installation</title>
+
+<!-- This entity contains the boilerplate text for standard -->
+<!-- compilation instructions.  If your application requires any -->
+<!-- special handling, remove it, and replace with your own text. -->
+
+&install.compile.documentation;
+
+		</sect1>
+
+	</appendix>
+
+&documentation.index;
+</book>

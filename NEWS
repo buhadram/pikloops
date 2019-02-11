@@ -1,0 +1,15 @@
+Version 0.2.5 :
+	Fix bug in delay calculation
+	Modify delay calculation management
+
+Version 0.2.4 :
+	Fix bug in german translation
+	Spanish translation by Carlos M. Cámara
+
+Version 0.2.3 :
+	German translation by Lukas Brausch
+
+Version 0.2.2 :
+	More strings to translate
+	French translation
+	French documentation

@@ -1,0 +1,233 @@
+/**
+ *   Copyright (C) 2004 by JAVIER FERNANDO VARGAS G
+ *   fernandovargas@cable.net.co
+ *
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation; either version 2 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program; if not, write to the
+ *   Free Software Foundation, Inc.,
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+ * */
+
+#include "pikdelay.h"
+#include <math.h>
+#include <qapplication.h>
+
+PiKDelay::PiKDelay(double ClkF, double TmDly)
+{
+    setClockFrequency(ClkF);
+    setTimeDelay(TmDly);
+
+    Refresh();
+}
+
+
+PiKDelay::~PiKDelay()
+{
+}
+
+
+/*!
+    \fn PiKDelay::Refresh()
+ */
+void PiKDelay::Refresh()
+{
+    double tmp;
+
+    CounterA = CounterB = CounterC = CounterD = -1;
+    MachineCycleTime = 4.0/(ClockFrequency*1000000.0);
+    MachineCycles = floor(TimeDelay/MachineCycleTime);
+	qDebug("Fréquence = %f",ClockFrequency);
+	qDebug("Durée cycle = %f",MachineCycleTime);
+	qDebug("Nb cycles = %f",MachineCycles);
+
+    if ( MachineCycles <= 771.0 ) {
+	CounterA = static_cast<int> ( ( MachineCycles / 3.0 ) - 1.0 );
+	MachineCycles = 3 * ( CounterA + 1 );
+
+	if ( CounterA == 256 ) {
+	    CounterA = 0;
+	}
+    }
+
+    else if ( MachineCycles <= 197635.0 ) {
+	qDebug("2 compteurs");
+	qDebug("avant Cycles = %f",MachineCycles);
+//        CounterB = static_cast<int> ( ( ( MachineCycles - 3.0 ) / 771.0 ) );
+        tmp = MachineCycles;
+        tmp -= 3.0;
+        tmp /= 771.0;
+//        tmp = ( MachineCycles - 3.0 ) / 771.0;
+        CounterB = static_cast<int> ( tmp );
+	qDebug("CounterB = %f",CounterB);
+        CounterA = static_cast<int> ( ( ( MachineCycles - 4.0 * CounterB - 3.0 ) / CounterB ) );
+	qDebug("CounterA = %f",CounterA);
+        MachineCycles = 3.0 * CounterA * CounterB + 4.0 * CounterB + 3.0;
+	qDebug("après Cycles = %f",MachineCycles);
+
+	if ( CounterA == 256 ) {
+	    CounterA = 0;
+	}
+	if ( CounterB == 256 ) {
+	    CounterB = 0;
+	}
+    }
+
+    else if ( MachineCycles <= 50463239.0 ) {
+	qDebug("3 compteurs");
+	qDebug("Cycles = %f",MachineCycles);
+        CounterC = static_cast<int> ( ( MachineCycles + 243269.0 ) / 197300.0 );
+        CounterB = static_cast<int> ( ( MachineCycles + 243269.0 - ( 197300.0 * CounterC ) ) / 770.0 );
+        CounterA = static_cast<int> ( ( MachineCycles + 243269.0 - ( 197300.0 * CounterC ) - ( 770.0 * CounterB ) ) / 3.0 );
+        MachineCycles = ( 3.0 * CounterA ) + ( 770.0 * CounterB ) + ( 197300.0 * CounterC ) - 243269.0;
+
+	if ( CounterA == 256 ) {
+	    CounterA = 0;
+	}
+	if ( CounterB == 256 ) {
+	    CounterB = 0;
+	}
+	if ( CounterC == 256 ) {
+	    CounterC = 0;
+	}
+    }
+
+    else if ( MachineCycles <= 12767985148.0 ) {
+        CounterD = static_cast<int> ( ( MachineCycles + 50267642.0 ) / 50070530.0 );
+        CounterC = static_cast<int> ( ( MachineCycles + 50267642.0 - ( 50070530.0 * CounterD ) ) / 196355.0 );
+        CounterB = static_cast<int> ( ( MachineCycles + 50267642.0 - ( 50070530.0 * CounterD ) - ( 196355.0 * CounterC ) ) / 770.0 );
+        CounterA = static_cast<int> ( ( MachineCycles + 50267642.0 - ( 50070530.0 * CounterD ) - ( 196355.0 * CounterC ) - ( CounterB * 770.0 ) ) / 3.0 );
+
+        MachineCycles = ( 3.0 * CounterA ) + ( 770.0 * CounterB ) + ( 196355.0 * CounterC ) + ( 50070530.0 * CounterD ) - 50267642.0;
+
+	if ( CounterA == 256 ) {
+	    CounterA = 0;
+	}
+	if ( CounterB == 256 ) {
+	    CounterB = 0;
+	}
+	if ( CounterC == 256 ) {
+	    CounterC = 0;
+	}
+	if ( CounterD == 256 ) {
+	    CounterD = 0;
+	}
+    }
+
+    /*Waitting for correction*/
+    else if ( MachineCycles > 12767985148.0 ) {
+
+    }
+
+    TimeDelay = MachineCycles * MachineCycleTime;
+}
+
+
+/*!
+    \fn PiKDelay::setClockFrequency(double)
+ */
+void PiKDelay::setClockFrequency(double CF)
+{
+    if ( CF > 0 ) {
+        ClockFrequency = CF;
+    }
+    else {
+        ClockFrequency = 4.00;
+    }
+}
+
+
+/*!
+    \fn PiKDelay::setTimeDelay(double = 1.00)
+ */
+void PiKDelay::setTimeDelay(double TD)
+{
+    if (TD >= 0) {
+        TimeDelay = TD;
+    }
+    else {
+        TimeDelay = 1.00;
+    }
+qDebug("TimeDelay = %f",TimeDelay);
+}
+
+
+/*!
+    \fn PiKDelay::getMachineCycles()
+ */
+double PiKDelay::getMachineCycles()
+{
+    Refresh();
+    return MachineCycles;
+}
+
+
+/*!
+    \fn PiKDelay::getTimeDelay()
+ */
+double PiKDelay::getTimeDelay()
+{
+    Refresh();
+    return TimeDelay;
+}
+
+
+/*!
+    \fn PiKDelay::getClockFrequency()
+ */
+double PiKDelay::getClockFrequency()
+{
+    Refresh();
+    return ClockFrequency;
+}
+
+
+/*!
+    \fn PiKDelay::getCounterA()
+ */
+int PiKDelay::getCounterA()
+{
+    Refresh();
+    return CounterA;
+}
+
+
+/*!
+    \fn PiKDelay::getCounterB()
+ */
+int PiKDelay::getCounterB()
+{
+    Refresh();
+    return CounterB;
+}
+
+
+/*!
+    \fn PiKDelay::getCounterC()
+ */
+int PiKDelay::getCounterC()
+{
+    Refresh();
+    return CounterC;
+}
+
+
+/*!
+    \fn PiKDelay::getCounterD()
+ */
+int PiKDelay::getCounterD()
+{
+    Refresh();
+    return CounterD;
+}
+

@@ -1,0 +1,46 @@
+Index: pikloops.kdevelop
+===================================================================
+--- pikloops.kdevelop	(révision 165)
++++ pikloops.kdevelop	(copie de travail)
+@@ -202,4 +202,28 @@
+     <customTagfilePath>/home/alain/projets/pikloops/prog/trunk/tags</customTagfilePath>
+     <activeTagsFiles/>
+   </ctagspart>
++  <dist>
++    <custom>false</custom>
++    <bzip>false</bzip>
++    <archname></archname>
++    <appname>pikloops</appname>
++    <version>$VERSION$</version>
++    <release></release>
++    <vendor></vendor>
++    <licence></licence>
++    <summary></summary>
++    <group></group>
++    <packager></packager>
++    <description></description>
++    <changelog></changelog>
++    <devpackage>false</devpackage>
++    <docspackage>false</docspackage>
++    <appicon>false</appicon>
++    <arch>0</arch>
++    <genHTML>false</genHTML>
++    <useRPM>false</useRPM>
++    <ftpkde>false</ftpkde>
++    <appskde>false</appskde>
++    <url></url>
++  </dist>
+ </kdevelop>
+Index: Makefile.am
+===================================================================
+--- Makefile.am	(révision 165)
++++ Makefile.am	(copie de travail)
+@@ -2,7 +2,7 @@
+ 
+ SUBDIRS = src po doc
+ 
+-EXTRA_DIST = admin AUTHORS COPYING ChangeLog INSTALL NEWS README TODO pikloops.lsm pikloops.spec
++EXTRA_DIST = admin/* AUTHORS COPYING ChangeLog INSTALL NEWS README TODO pikloops.lsm pikloops.spec
+ 
+ ####### kdevelop will overwrite this part!!! (end)############
+ # not a GNU package. You can remove this line, if 

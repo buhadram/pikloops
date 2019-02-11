@@ -1,0 +1,167 @@
+<?xml version="1.0" ?>
+<!-- kate: tab-width 2; indent-mode xml; -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+		  <!ENTITY pikloops "<application>PikLoops</application>">
+		  <!ENTITY kappname "&pikloops;">
+		  <!ENTITY pikloops-http '<ulink url="http://pikloops.sourceforge.net">http://pikloops.sourceforge.net</ulink>'>
+		  <!ENTITY % addindex "IGNORE">
+		  <!ENTITY % English "INCLUDE">
+]>
+		  
+<book lang="&language;">
+	<bookinfo>
+		<title>The PikLoops Handbook</title>
+		<authorgroup>
+			<author>
+				<firstname>Alain</firstname>
+				<surname>Portal</surname>
+				<affiliation>
+					<address>
+						<email>aportal@univ-montp2.fr</email>
+					</address>
+				</affiliation>
+			</author>
+		</authorgroup>
+		<copyright>
+			<year>2007</year>
+			<holder>Alain Portal</holder>
+		</copyright>
+		<legalnotice>&FDLNotice;</legalnotice>
+		<date>2007-09-29</date>
+		<releaseinfo>0.2.4</releaseinfo>
+		<abstract>
+			<para>PikLoops is a code generator for PIC delay</para> 
+		</abstract>
+		<keywordset>
+			<keyword>PikLoops</keyword>
+			<keyword>KDE</keyword>
+			<keyword>Development</keyword>
+			<keyword>Electronics</keyword>
+			<keyword>PICs</keyword>
+			<keyword>delay</keyword>
+		</keywordset>
+	</bookinfo>
+
+	<chapter id="introduction">
+		<title>Introduction</title>
+		<para>&kappname; an intuitive tools that easy the electronic engineer job when
+			designing Microchip PIC delays. His use is really easy.
+		</para>
+		<para>So, do you really need some documentation to use &kappname;? I don't think so.
+		</para>
+	</chapter>
+
+	<chapter id="using-pikloop">
+		<title>Using &kappname;</title>
+		<para>In the frequency list, choose the one you use for the PIC.
+			If you don't find it, then you can enter a custom value (MHz).
+			This custom value will be appended in the list and will be avaliable
+			while the application is running.
+		</para>
+		<para>
+			Then, input delay in the provided entry and press "Enter"
+			or click on the "Calculate" button.
+		</para>
+		<para>
+			So, &kappname; wrote to you the delay code. To get it, you can copy it whith
+			the shortcut <keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>,
+			or with the "Copy" button in the toolbar. Now, you can paste it in your editor.
+			You can also drag code from the windows and drop it in your editor.
+		</para>
+		<para>
+			That's all!
+		</para>
+		<para>
+			If you think this documentation can be improved, tell me, and tell me how
+			improved it&nbsp;;-)
+		</para>
+	</chapter>
+
+	<chapter id="bugs">
+		<title>Known bugs</title>
+		<para>
+			None of course!
+		</para>
+	</chapter>
+
+	<chapter id="future">
+		<title>And in the future?</title>
+		<para>
+			What will we doing?
+		</para>
+		<para>
+			A command line interface should be nice no?
+		</para>
+	</chapter>
+
+	<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+		<title>Credits and License</title>
+
+		<para>
+			&kappname;
+		</para>
+		<para>
+			Program copyright &copy; 2004 Javier Fernando Vargas Gonzales <email>fernandovargas@cable.net.co</email>
+		</para>
+		<para>
+			Program copyright &copy; 2004 Alain Gibaud <email>alain.gibaud@free.fr</email>
+		</para>
+		<para>
+			Program copyright &copy; 2007 Alain Portal <email>aportal@univ-montp2.fr</email>
+		</para>
+
+		<para>
+			Documentation Copyright &copy; 2007 Alain Portal
+		</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;               <!-- FDL: do not remove -->
+
+<!-- Determine which license your application is licensed under,
+     and delete all the remaining licenses below:
+
+     (NOTE:  All documentation are licensed under the FDL,
+     regardless of what license the application uses) -->
+
+&underGPL;        	 <!-- GPL License -->
+
+	</chapter>
+
+	<appendix id="installation">
+		<title>Installation</title>
+
+
+		<sect1 id="getting-kapp">
+			<title>How to obtain &kappname;</title>
+
+<!-- This first entity contains boiler plate for applications that are
+part of KDE CVS.  You should remove it if you are releasing your
+application -->
+
+			<para>
+				You can download &kappname; from &pikloops-http;
+			</para>
+		</sect1>
+
+		<sect1 id="compilation">
+			<title>Compilation and Installation</title>
+
+<!-- This entity contains the boilerplate text for standard -->
+<!-- compilation instructions.  If your application requires any -->
+<!-- special handling, remove it, and replace with your own text. -->
+
+&install.compile.documentation;
+
+		</sect1>
+
+	</appendix>
+
+&documentation.index;
+</book>

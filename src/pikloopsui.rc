@@ -1,0 +1,14 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="pikloops" version="1">
+<MenuBar>
+  <Menu name="Actions"><text>&amp;Actions</text>
+    <Action name="calculate" />
+  </Menu>
+</MenuBar>
+<ToolBar name="mainToolBar">
+  <Separator/>
+  <Action name="calculate"/>
+  <Separator/>
+  <Action name="file_quit"/>
+</ToolBar>
+</kpartgui>
